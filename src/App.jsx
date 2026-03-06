@@ -37,14 +37,12 @@ function App() {
       </div>
 
       {/* Tera Asli Content */}
-      <div className="fixed inset-0 z-50 pointer-events-none flex items-center justify-center">
-        <div className="pointer-events-auto">
-          {!isUnlocked ? (
-            <Login onLogin={() => setIsUnlocked(true)} />
-          ) : (
-            <Dashboard />
-          )}
-        </div>
+      <div className="relative z-10">
+        {!isUnlocked ? (
+          <Login onLogin={() => setIsUnlocked(true)} />
+        ) : (
+          <Dashboard />
+        )}
       </div>
     </div>
   );

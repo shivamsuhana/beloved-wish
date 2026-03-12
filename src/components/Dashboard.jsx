@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import MagicCard from './MagicCard';
 import FolderModal from './FolderModal';
-// Gift icon  final button ke liye
+// Hamein 'Gift' icon chahiye final button ke liye
 import { Gift } from 'lucide-react';
 
 export default function Dashboard() {
@@ -11,7 +11,7 @@ export default function Dashboard() {
   const [showFinalWish, setShowFinalWish] = useState(false);
 
   useEffect(() => {
-    // Page load crackers 
+    // Page load crackers in pink theme
     const duration = 3 * 1000;
     const animationEnd = Date.now() + duration;
     const interval = setInterval(function() {
@@ -27,7 +27,7 @@ export default function Dashboard() {
     setShowFinalWish(true);
   };
 
-  // my flirtly lines
+  // 50 UNIQUE, REALISTIC aur FUTURISTIC messages (TG Story based)
   const featuresList = [
   { "id": 1, "title": "The First Glance", "icon": "✨", "desc": "Hooked instantly...", "detailedMessage": "I don't believe in love at first sight, but I do believe in being captivated instantly. The moment I noticed you, the world just... blurred." },
   { "id": 2, "title": "Stolen Thoughts", "icon": "🧠", "desc": "You own my mind...", "detailedMessage": "My mind is a chaotic place, but lately, you’ve become the only silent, beautiful thought in the middle of all the noise." },
@@ -142,14 +142,14 @@ export default function Dashboard() {
         </motion.button>
       </div>
 
-      {/* FINAL WISH POPUP model*/}
+      {/* --- PREMUM GRAND FINAL WISH POPUP (MODAL) --- */}
       <AnimatePresence>
         {showFinalWish && (
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-lg"
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-lg overflow-y-auto"
             onClick={() => setShowFinalWish(false)}
           >
             <motion.div 
@@ -157,9 +157,8 @@ export default function Dashboard() {
               animate={{ scale: 1, y: 0, rotate: 0 }}
               exit={{ scale: 0.8, y: 50, rotate: 5 }}
               transition={{ type: "spring", bounce: 0.4 }}
-
-              // White ya Rose glass background for Modal
-              className="bg-white/70 backdrop-blur-2xl border-2 border-white rounded-[40px] shadow-[0_20px_60px_rgba(255,182,193,0.5)] p-10 max-w-3xl w-full text-center relative overflow-hidden"
+              // White/Rose glass background for Modal
+              className="bg-white/70 backdrop-blur-2xl border-2 border-white rounded-[40px] shadow-[0_20px_60px_rgba(255,182,193,0.5)] p-6 md:p-10 max-w-3xl w-full max-h-screen md:max-h-[90vh] overflow-y-auto text-center relative my-auto"
               onClick={(e) => e.stopPropagation()} 
             >
               {/* Decorative elements */}
@@ -167,23 +166,24 @@ export default function Dashboard() {
               <div className="absolute bottom-0 right-0 w-32 h-32 bg-rose-200 rounded-full translate-x-10 translate-y-10 blur-3xl opacity-60"></div>
 
               <button 
+                type="button"
                 onClick={() => setShowFinalWish(false)}
-                className="absolute top-6 right-6 bg-pink-100 hover:bg-pink-200 text-pink-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-2xl transition-all shadow"
+                className="absolute top-4 right-4 z-20 bg-pink-100 hover:bg-pink-200 text-pink-600 rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center font-bold text-lg md:text-2xl transition-all shadow hover:shadow-lg"
               >
                 ✕
               </button>
 
-              <div className="text-7xl mb-6 filter drop-shadow-md relative z-10">🎂</div>
-              <h2 className="text-5xl title-font font-bold text-gray-800 mb-8 drop-shadow-[0_2px_5px_rgba(255,105,180,0.3)] relative z-10">Happy Birthday Once Again!</h2>
+              <div className="text-5xl md:text-7xl mb-4 md:mb-6 filter drop-shadow-md relative z-10">🎂</div>
+              <h2 className="text-3xl md:text-5xl title-font font-bold text-gray-800 mb-6 md:mb-8 drop-shadow-[0_2px_5px_rgba(255,105,180,0.3)] relative z-10">Happy Birthday Once Again!</h2>
               
-              {/* The masage or wish jo hm krenge */}
-             <div className="text-left space-y-6 text-xl text-white font-semibold leading-relaxed px-6 relative z-10 bg-gradient-to-br from-pink-400/30 via-rose-300/20 to-white/20 backdrop-blur-2xl p-8 rounded-3xl border border-white/50 shadow-[0_10px_40px_rgba(255,105,180,0.4)]">
-  {/*msg ka header last wale ka*/}
+              {/* The Realistic Message */}
+             <div className="text-left space-y-4 md:space-y-6 text-base md:text-xl text-white font-semibold leading-relaxed px-4 md:px-6 relative z-10 bg-gradient-to-br from-pink-400/30 via-rose-300/20 to-white/20 backdrop-blur-2xl p-6 md:p-8 rounded-3xl border border-white/50 shadow-[0_10px_40px_rgba(255,105,180,0.4)]">
+  {/* Header with Shadow for readability */}
   <p className="drop-shadow-lg italic text-white">
     "This is the last card, but it’s just the beginning of us."
   </p>
 
-  {/* Main dark romantic body */}
+  {/* Main Dark Romance Body */}
   <p className="drop-shadow-md">
     I am stuck in an infinite loop of wanting you. Every line of code I wrote was just an excuse to be closer to your world. My move is done, and now the system is waiting for your command. 
   
@@ -191,20 +191,20 @@ export default function Dashboard() {
   </p>
 
   {/* Final Wish with Title Font */}
-  <p className="text-3xl title-font text-center pt-4 drop-shadow-xl text-white">
+  <p className="text-xl md:text-3xl title-font text-center pt-2 md:pt-4 drop-shadow-xl text-white">
     Happy Sweatie ! love you✨💖
   </p>
   
-  {/* Signature style */}
-  <p className="text-right text-sm font-mono opacity-80 pt-2">
+  {/* Signature Style */}
+  <p className="text-right text-xs md:text-sm font-mono opacity-80 pt-2">
     // Connection status: Pending...
   </p>
 </div>
 
-              {/* signature */}
-              <div className="mt-12 text-right pr-8 relative z-10">
-                <p className="text-gray-600 text-lg mb-2 italic">Yours truly,</p>
-                <p className="text-7xl title-font font-bold text-pink-500 drop-shadow-[0_0_15px_rgba(244,114,182,0.8)] hover:scale-110 transition-transform cursor-default">
+              {/* KRISHU'S SIGNATURE with Glowing Effect */}
+              <div className="mt-8 md:mt-12 text-right pr-4 md:pr-8 relative z-10">
+                <p className="text-lg text-gray-600 mb-2 italic">Yours truly,</p>
+                <p className="text-4xl md:text-7xl title-font font-bold text-pink-500 drop-shadow-[0_0_15px_rgba(244,114,182,0.8)] hover:scale-110 transition-transform cursor-default">
                   ~ Krishu
                 </p>
               </div>
@@ -213,7 +213,7 @@ export default function Dashboard() {
         )}
       </AnimatePresence>
 
-      {/*Reuse of existing Modal for 50 cards --- */}
+      {/* --- Reuse existing Modal for 50 cards --- */}
       <FolderModal 
         isOpen={selectedFolder !== null} 
         onClose={() => setSelectedFolder(null)} 

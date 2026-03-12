@@ -22,8 +22,9 @@ export default function FolderModal({ isOpen, onClose, data }) {
           onClick={(e) => e.stopPropagation()} 
         >
           <button 
+            type="button"
             onClick={onClose}
-            className="absolute top-4 right-4 bg-pink-100 hover:bg-pink-200 text-pink-600 rounded-full w-10 h-10 flex items-center justify-center font-bold text-xl transition-all"
+            className="absolute top-4 right-4 z-20 bg-pink-100 hover:bg-pink-200 text-pink-600 rounded-full w-10 h-10 flex items-center justify-center font-bold text-xl transition-all hover:shadow-lg"
           >
             ✕
           </button>

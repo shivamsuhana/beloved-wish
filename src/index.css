@@ -6,6 +6,31 @@
   box-sizing: border-box;
 }
 
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #ff69b4, #ffc0cb);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #ff1493, #ff69b4);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ff69b4 rgba(255, 255, 255, 0.1);
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(-45deg, #ffe2e2, #ffecd2, #fcb6d0, #fdfbfb);
